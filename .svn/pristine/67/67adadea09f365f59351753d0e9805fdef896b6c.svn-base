@@ -1,0 +1,404 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.adecco.emea.projects</groupId>
+	<artifactId>ESB_MO_SANITY</artifactId>
+	<packaging>jar</packaging>
+	<version>1.4-SNAPSHOT</version>
+	<name>ESB_MO_SANITY</name>
+	
+	<scm>
+		<!--Check this to see if it matches the SVN URL -->
+		<connection>scm:svn:http://ntintfr06474.emea.adeccotest.net:9880/EMEA/BW/Technical/ESB_SANITY_CHECK/branches/ESB_SANITY_CHECK_MO</connection>
+		<developerConnection>scm:svn:http://ntintfr06474.emea.adeccotest.net:9880/EMEA/BW/Technical/ESB_SANITY_CHECK/branches/ESB_SANITY_CHECK_MO</developerConnection>
+		<url>http://ntintfr06474.emea.adeccotest.net:9880/EMEA/BW/Technical/ESB_SANITY_CHECK/branches/ESB_SANITY_CHECK_MO</url>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Nexus Releases</name>
+			<url>http://ntintfr06474.emea.adeccotest.net:9891/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshots</name>
+			<url>http://ntintfr06474.emea.adeccotest.net:9891/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<ems.url.ONLINE>tcp://ntintfr06474.emea.adeccotest.net:7234,tcp://ntintfr06475.emea.adeccotest.net:7234</ems.url.ONLINE>
+				<ems.username>admin</ems.username>
+				<ems.password>ZFQJ5RHjzQ</ems.password>
+				<ems.queue.reponse>Q.SANITY.RESPONSE</ems.queue.reponse>
+				<ems.message.test><![CDATA[<action><method>GET</method><value>${service}</value><body></body><timeout>300000</timeout></action>]]></ems.message.test>
+				<url.title.0>PUTCOMMERCIALCONTRACT MO</url.title.0>
+				<url.title.1>PUTCREDITCHECK MO</url.title.1>
+				<url.title.2>PUTCOMMERCIALCONTRACT PSJ</url.title.2>
+				<url.title.3>PUTCREDITCHECK PSJ</url.title.3>
+				<url.title.4>TIMENET Service</url.title.4>
+				<url.key.0>https://dev-services-esb.emea.adeccotest.net:9181/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.0>
+				<url.key.1>https://dev-services-esb.emea.adeccotest.net:9180/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.1>
+				<url.key.2>https://dev-services-esb.emea.adeccotest.net:9179/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.2>
+				<url.key.3>https://dev-services-esb.emea.adeccotest.net:9178/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.3>
+				<url.key.4>https://dev-services-esb.emea.adeccotest.net:9193/timenet/assignment</url.key.4>
+				<url.value.0>200</url.value.0>
+				<url.value.1>200</url.value.1>
+				<url.value.2>200</url.value.2>
+				<url.value.3>200</url.value.3>
+				<url.value.4>200</url.value.4>
+				<ems.queue.0>Q.CIO_MO_CNTMGT.INT.SANITY</ems.queue.0>
+				<ems.queue.1>Q.CIO_MO_CNTMGT_PSJ.INT.SANITY</ems.queue.1>
+				<jms.test.0.0>Addresses.V2</jms.test.0.0>
+				<jms.test.0.1>Customers.V2</jms.test.0.1>
+				<jms.test.0.2>Contract.V2</jms.test.0.2>
+				<jms.test.0.3>Contacts.V2</jms.test.0.3>
+				<jms.test.0.4>CreditCheckRequests.V2</jms.test.0.4>
+				<jms.test.1.0>Customers.V1</jms.test.1.0>
+				<jms.test.1.1>Addresses.V1</jms.test.1.1>
+				<jms.test.1.2>Contacts.V1</jms.test.1.2>
+				<jms.test.1.3>CreditCheckRequests.V1</jms.test.1.3>
+				<jms.test.1.4>Contract.v1</jms.test.1.4>	
+				<jms.test.method.0.0>GET</jms.test.method.0.0>
+				<jms.test.method.0.1>GET</jms.test.method.0.1>
+				<jms.test.method.0.2>GET</jms.test.method.0.2>
+				<jms.test.method.0.3>GET</jms.test.method.0.3>
+				<jms.test.method.0.4>GET</jms.test.method.0.4>
+				<jms.test.method.1.0>GET</jms.test.method.1.0>
+				<jms.test.method.1.1>GET</jms.test.method.1.1>
+				<jms.test.method.1.2>GET</jms.test.method.1.2>
+				<jms.test.method.1.3>GET</jms.test.method.1.3>
+				<jms.test.method.1.4>GET</jms.test.method.1.4>
+				<Addresses.V2>200</Addresses.V2>
+				<Customers.V2>200</Customers.V2>
+				<Contract.V2>200</Contract.V2>
+				<Contacts.V2>200</Contacts.V2>
+				<CreditCheckRequests.V2>200</CreditCheckRequests.V2>
+				<Customers.V1>200</Customers.V1>
+				<Addresses.V1>200</Addresses.V1>
+				<Contacts.V1>200</Contacts.V1>
+				<CreditCheckRequests.V1>200</CreditCheckRequests.V1>
+				<Contract.v1>200</Contract.v1>
+			</properties>
+		</profile>
+		<profile>
+			<id>tat</id>
+			<properties>
+				<ems.url.ONLINE>tcp://ntintfr06517.emea.adeccotest.net:7264,tcp://ntintfr06518.emea.adeccotest.net:7264</ems.url.ONLINE>
+				<ems.username>admin</ems.username>
+				<ems.password>ZFQJ5RHjzQ</ems.password>
+				<ems.queue.reponse>Q.SANITY.RESPONSE</ems.queue.reponse>
+				<ems.message.test><![CDATA[<action><method>${method}</method><value>${service}</value><body></body><timeout>300000</timeout></action>]]></ems.message.test>
+				<url.title.0>PUTCOMMERCIALCONTRACT MO</url.title.0>
+				<url.title.1>PUTCREDITCHECK MO</url.title.1>
+				<url.title.2>PUTCOMMERCIALCONTRACT PSJ</url.title.2>
+				<url.title.3>PUTCREDITCHECK PSJ</url.title.3>
+				<url.title.4>TIMENET Service</url.title.4>
+				<url.key.0>https://tat-services-esb.emea.adeccotest.net:9181/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.0>
+				<url.key.1>https://tat-services-esb.emea.adeccotest.net:9180/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.1>
+				<url.key.2>https://tat-services-esb.emea.adeccotest.net:9179/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.2>
+				<url.key.3>https://tat-services-esb.emea.adeccotest.net:9178/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.3>
+				<url.key.4>https://tat-services-esb.emea.adeccotest.net:9193/timenet/assignment</url.key.4>
+				<url.value.0>200</url.value.0>
+				<url.value.1>200</url.value.1>
+				<url.value.2>200</url.value.2>
+				<url.value.3>200</url.value.3>
+				<url.value.4>200</url.value.4>
+				<ems.queue.0>Q.CIO_MO_CNTMGT.INT.SANITY</ems.queue.0>
+				<ems.queue.1>Q.CIO_MO_CNTMGT_PSJ.INT.SANITY</ems.queue.1>
+				<ems.queue.2>Q.CIO_MO_CIS_COMCONTRACT.INT.SANITY</ems.queue.2>
+				<jms.test.0.0>Addresses.V2</jms.test.0.0>
+				<jms.test.0.1>Customers.V2</jms.test.0.1>
+				<jms.test.0.2>Contract.V2</jms.test.0.2>
+				<jms.test.0.3>Contacts.V2</jms.test.0.3>
+				<jms.test.0.4>CreditCheckRequests.V2</jms.test.0.4>
+				<jms.test.1.0>Customers.V1</jms.test.1.0>
+				<jms.test.1.1>Addresses.V1</jms.test.1.1>
+				<jms.test.1.2>Contacts.V1</jms.test.1.2>
+				<jms.test.1.3>CreditCheckRequests.V1</jms.test.1.3>
+				<jms.test.1.4>Contract.v1</jms.test.1.4>
+				<jms.test.2.0>/esb/CommercialContract/Job</jms.test.2.0>
+				<jms.test.2.1>/esb/CommercialContract/ServiceRequest</jms.test.2.1>
+				<jms.test.method.0.0>GET</jms.test.method.0.0>
+				<jms.test.method.0.1>GET</jms.test.method.0.1>
+				<jms.test.method.0.2>GET</jms.test.method.0.2>
+				<jms.test.method.0.3>GET</jms.test.method.0.3>
+				<jms.test.method.0.4>GET</jms.test.method.0.4>
+				<jms.test.method.1.0>GET</jms.test.method.1.0>
+				<jms.test.method.1.1>GET</jms.test.method.1.1>
+				<jms.test.method.1.2>GET</jms.test.method.1.2>
+				<jms.test.method.1.3>GET</jms.test.method.1.3>
+				<jms.test.method.1.4>GET</jms.test.method.1.4>
+				<jms.test.method.2.0>PUT</jms.test.method.2.0>
+				<jms.test.method.2.1>PUT</jms.test.method.2.1>
+				<Addresses.V2>200</Addresses.V2>
+				<Customers.V2>200</Customers.V2>
+				<Contract.V2>200</Contract.V2>
+				<Contacts.V2>200</Contacts.V2>
+				<CreditCheckRequests.V2>200</CreditCheckRequests.V2>
+				<Customers.V1>200</Customers.V1>
+				<Addresses.V1>200</Addresses.V1>
+				<Contacts.V1>200</Contacts.V1>
+				<CreditCheckRequests.V1>200</CreditCheckRequests.V1>
+				<Contract.v1>200</Contract.v1>
+				<_esb_CommercialContract_Job>403</_esb_CommercialContract_Job>
+				<_esb_CommercialContract_ServiceRequest>403</_esb_CommercialContract_ServiceRequest>
+			</properties>
+		</profile>
+		<profile>
+			<id>int</id>
+			<properties>
+				<ems.url.ONLINE>tcp://ntintfr06476.emea.adeccotest.net:7254,tcp://ntintfr06477.emea.adeccotest.net:7254</ems.url.ONLINE>
+				<ems.username>admin</ems.username>
+				<ems.password>ZFQJ5RHjzQ</ems.password>
+				<ems.queue.reponse>Q.SANITY.RESPONSE</ems.queue.reponse>
+				<ems.message.test><![CDATA[<action><method>${method}</method><value>${service}</value><body></body><timeout>300000</timeout></action>]]></ems.message.test>
+				<url.title.0>PUTCOMMERCIALCONTRACT MO</url.title.0>
+				<url.title.1>PUTCREDITCHECK MO</url.title.1>
+				<url.title.2>PUTCOMMERCIALCONTRACT PSJ</url.title.2>
+				<url.title.3>PUTCREDITCHECK PSJ</url.title.3>
+				<url.title.4>TIMENET Service</url.title.4>
+				<url.key.0>https://int-services-esb.emea.adeccotest.net:9181/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.0>
+				<url.key.1>https://int-services-esb.emea.adeccotest.net:9180/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.1>
+				<url.key.2>https://int-services-esb.emea.adeccotest.net:9179/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.2>
+				<url.key.3>https://int-services-esb.emea.adeccotest.net:9178/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.3>
+				<url.key.4>https://int-services-esb.emea.adeccotest.net:9193/timenet/assignment</url.key.4>
+				<url.value.0>200</url.value.0>
+				<url.value.1>200</url.value.1>
+				<url.value.2>200</url.value.2>
+				<url.value.3>200</url.value.3>
+				<url.value.4>200</url.value.4>
+				<ems.queue.0>Q.CIO_MO_CNTMGT.INT.SANITY</ems.queue.0>
+				<ems.queue.1>Q.CIO_MO_CNTMGT_PSJ.INT.SANITY</ems.queue.1>
+				<ems.queue.2>Q.CIO_MO_CIS_COMCONTRACT.INT.SANITY</ems.queue.2>
+				<jms.test.0.0>Addresses.V2</jms.test.0.0>
+				<jms.test.0.1>Customers.V2</jms.test.0.1>
+				<jms.test.0.2>Contract.V2</jms.test.0.2>
+				<jms.test.0.3>Contacts.V2</jms.test.0.3>
+				<jms.test.0.4>CreditCheckRequests.V2</jms.test.0.4>
+				<jms.test.1.0>Customers.V1</jms.test.1.0>
+				<jms.test.1.1>Addresses.V1</jms.test.1.1>
+				<jms.test.1.2>Contacts.V1</jms.test.1.2>
+				<jms.test.1.3>CreditCheckRequests.V1</jms.test.1.3>
+				<jms.test.1.4>Contract.v1</jms.test.1.4>
+				<jms.test.2.0>/esb/CommercialContract/Job</jms.test.2.0>
+				<jms.test.2.1>/esb/CommercialContract/ServiceRequest</jms.test.2.1>
+				<Addresses.V2>200</Addresses.V2>
+				<Customers.V2>200</Customers.V2>
+				<Contract.V2>200</Contract.V2>
+				<Contacts.V2>200</Contacts.V2>
+				<CreditCheckRequests.V2>200</CreditCheckRequests.V2>
+				<Customers.V1>200</Customers.V1>
+				<Addresses.V1>200</Addresses.V1>
+				<Contacts.V1>200</Contacts.V1>
+				<CreditCheckRequests.V1>200</CreditCheckRequests.V1>
+				<Contract.v1>200</Contract.v1>
+				<_esb_CommercialContract_Job>403</_esb_CommercialContract_Job>
+				<_esb_CommercialContract_ServiceRequest>403</_esb_CommercialContract_ServiceRequest>
+				<jms.test.method.0.0>GET</jms.test.method.0.0>
+				<jms.test.method.0.1>GET</jms.test.method.0.1>
+				<jms.test.method.0.2>GET</jms.test.method.0.2>
+				<jms.test.method.0.3>GET</jms.test.method.0.3>
+				<jms.test.method.0.4>GET</jms.test.method.0.4>
+				<jms.test.method.1.0>GET</jms.test.method.1.0>
+				<jms.test.method.1.1>GET</jms.test.method.1.1>
+				<jms.test.method.1.2>GET</jms.test.method.1.2>
+				<jms.test.method.1.3>GET</jms.test.method.1.3>
+				<jms.test.method.1.4>GET</jms.test.method.1.4>
+				<jms.test.method.2.0>PUT</jms.test.method.2.0>
+				<jms.test.method.2.1>PUT</jms.test.method.2.1>
+			</properties>
+		</profile>
+		<profile>
+			<id>uat</id>
+			<properties>
+				<enviroments.many>true</enviroments.many>
+				<ems.url.ONLINE>tcp://NTINTFR06501.emea.adecco.net:7274,tcp://NTINTFR06502.emea.adecco.net:7274</ems.url.ONLINE>
+				<ems.username>admin</ems.username>
+				<ems.password>Online69100</ems.password>
+				<ems.queue.reponse>Q.SANITY.RESPONSE</ems.queue.reponse>
+				<ems.message.test><![CDATA[<action><method>${method}</method><value>${service}</value><body></body><timeout>300000</timeout></action>]]></ems.message.test>
+				<url.title.0>EMEA PUTCOMMERCIALCONTRACT MO</url.title.0>
+				<url.title.1>EMEA PUTCREDITCHECK MO</url.title.1>
+				<url.key.0>https://uat-services-esb.emea.adecco.net:9181/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.0>
+				<url.key.1>https://uat-services-esb.emea.adecco.net:9180/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.1>
+				<url.value.0>200</url.value.0>
+				<url.value.1>200</url.value.1>
+				<ems.queue.0>Q.CIO_MO_CNTMGT.INT.SANITY</ems.queue.0>
+				<jms.test.0.0>Addresses.V2</jms.test.0.0>
+				<jms.test.0.1>Customers.V2</jms.test.0.1>
+				<jms.test.0.2>Contract.V2</jms.test.0.2>
+				<jms.test.0.3>Contacts.V2</jms.test.0.3>
+				<jms.test.0.4>CreditCheckRequests.V2</jms.test.0.4>
+				<Addresses.V2>200</Addresses.V2>
+				<Customers.V2>200</Customers.V2>
+				<Contract.V2>200</Contract.V2>
+				<Contacts.V2>200</Contacts.V2>
+				<CreditCheckRequests.V2>200</CreditCheckRequests.V2>
+				<jms.test.method.0.0>GET</jms.test.method.0.0>
+				<jms.test.method.0.1>GET</jms.test.method.0.1>
+				<jms.test.method.0.2>GET</jms.test.method.0.2>
+				<jms.test.method.0.3>GET</jms.test.method.0.3>
+				<jms.test.method.0.4>GET</jms.test.method.0.4>
+			</properties>
+		</profile>
+		<profile>
+			<id>uatapac</id>
+			<properties>
+				<enviroments.many>true</enviroments.many>
+				<ems.url.ONLINE>tcp://NTINTFR06501.emea.adecco.net:7274,tcp://NTINTFR06502.emea.adecco.net:7274</ems.url.ONLINE>
+				<ems.username>admin</ems.username>
+				<ems.password>Online69100</ems.password>
+				<ems.queue.reponse>Q.SANITY.RESPONSE</ems.queue.reponse>
+				<ems.message.test><![CDATA[<action><method>${method}</method><value>${service}</value><body></body><timeout>300000</timeout></action>]]></ems.message.test>
+				<url.title.0>APAC PUTCOMMERCIALCONTRACT MO</url.title.0>
+				<url.title.1>APAC PUTCREDITCHECK MO</url.title.1>
+				<url.key.0>https://uat-services-esb.apac.adecco.net:9179/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url.key.0>
+				<url.key.1>https://uat-services-esb.apac.adecco.net:9178/MO/CNTMGT/PUTCREDITCHECK/v01</url.key.1>
+				<url.value.0>200</url.value.0>
+				<url.value.1>200</url.value.1>
+				<ems.queue.0>Q.CIO_MO_CNTMGT.INT.SANITY</ems.queue.0>
+				<jms.test.0.0>Addresses.V1</jms.test.0.0>
+				<jms.test.0.1>Customers.V1</jms.test.0.1>
+				<jms.test.0.2>Contract.V1</jms.test.0.2>
+				<jms.test.0.3>Contacts.V1</jms.test.0.3>
+				<jms.test.0.4>CreditCheckRequests.V1</jms.test.0.4>
+				<Addresses.V2>200</Addresses.V2>
+				<Customers.V2>200</Customers.V2>
+				<Contract.V2>200</Contract.V2>
+				<Contacts.V2>200</Contacts.V2>
+				<CreditCheckRequests.V2>200</CreditCheckRequests.V2>
+				<jms.test.method.0.0>GET</jms.test.method.0.0>
+				<jms.test.method.0.1>GET</jms.test.method.0.1>
+				<jms.test.method.0.2>GET</jms.test.method.0.2>
+				<jms.test.method.0.3>GET</jms.test.method.0.3>
+				<jms.test.method.0.4>GET</jms.test.method.0.4>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tibco.jms</groupId>
+			<artifactId>jms</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tibco.jms</groupId>
+			<artifactId>tibjms</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tibco.jms</groupId>
+			<artifactId>tibrvjms</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!-- download source code in Eclipse, best practice -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<!-- Set a JDK compiler level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<!-- Make this jar executable -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<!-- DO NOT include log4j.properties file in your Jar -->
+					<excludes>
+						<exclude>**/log4j.properties</exclude>
+					</excludes>
+					<archive>
+						<manifest>
+							<!-- Jar file entry point -->
+							<mainClass>com.adecco.emea.projects.TestSSL</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<phase>generate-test-resources</phase>
+						<goals>
+							<goal>write-project-properties</goal>
+						</goals>
+						<configuration>
+							<outputFile>${basedir}/sanitycheck.properties</outputFile>
+						</configuration>
+						<id>copy-properties</id>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											properties-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.0-alpha-2,)
+										</versionRange>
+										<goals>
+											<goal>
+												write-project-properties
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

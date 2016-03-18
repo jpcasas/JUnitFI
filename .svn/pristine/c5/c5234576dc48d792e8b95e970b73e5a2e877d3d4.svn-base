@@ -1,0 +1,83 @@
+package com.adecco.emea.projects;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Properties;
+import java.util.Set;
+
+import junit.framework.Test;
+import junit.framework.TestSuite;
+import com.adecco.emea.projects.ServicesHTTPTest;
+
+
+public class TestServices extends TestSuite{
+	
+	public static Test suite() throws FileNotFoundException, IOException{
+		TestSuite suite = new TestSuite("Sanity Check");
+    	File file = new File("./sanitycheck.properties");
+    	Properties properties=new Properties();
+    	properties.load(new FileReader(file));
+    	Set<Object> keyset=properties.keySet();
+    	String[] queues=getArray(keyset,properties, "ems.queue.");
+    	
+    	for (int i = 0; i < queues.length; i++) {
+			String[] services=getArray(keyset, properties, "jms.test."+i+".");
+			String[] methods=getArray(keyset, properties, "jms.test.method."+i+".");
+			for (int j = 0; j < services.length; j++) {
+				String reponse=(properties.getProperty(services[j]) == null)?properties.getProperty(services[j].replace("/", "_")):properties.getProperty(services[j]);
+				ServicesJMSTest jmstest=new ServicesJMSTest("testJMS", services[j], reponse, queues[i], methods[j]);
+				suite.addTest(jmstest);
+			}
+			
+		}
+    	String[] servicesNames=getArray(keyset,properties, "url.title.");
+    	String[] serviceUrls=getArray(keyset,properties, "url.key.");
+    	String[] serviceReponses=getArray(keyset,properties, "url.value.");
+    	
+    	for (int i = 0; i < servicesNames.length; i++) {
+    		ServicesHTTPTest test;
+       		test=new ServicesHTTPTest("testURL",serviceUrls[i], serviceReponses[i], servicesNames[i]);
+       		suite.addTest(test);
+		}
+    	    
+    	
+    	return suite;
+	}
+	
+	private static String[] getArray(Set<Object> keyset, Properties properties, String string) {
+		ArrayList<String> array=new  ArrayList<String>();
+		for (int i = 0; i < properties.size(); i++) {
+			String value=(String) properties.get(string+i);
+			if (value!=null)array.add(value);
+			else break;
+			
+		}
+		
+		return Arrays.copyOf(array.toArray(), array.toArray().length, String[].class);
+	}
+
+	public static void main(String[] args) throws Exception {
+		TestServices.suite();
+		File file = new File("./sanitycheck.properties");
+    	Properties properties=new Properties();
+    	properties.load(new FileReader(file));
+    	Set<Object> keyset=properties.keySet();
+    	String[] queues=getArray(keyset,properties, "ems.queue.");
+    	for (int i = 0; i < queues.length; i++) {
+			String[] services=getArray(keyset, properties, "jms.test."+i+".");
+			String[] methods=getArray(keyset, properties, "jms.test.method."+i+".");
+			for (int j = 0; j < services.length; j++) {
+				ServicesJMSTest jmstest=new ServicesJMSTest("testJMS", services[j], properties.getProperty(services[j]), queues[i], methods[j]);
+				jmstest.test();
+			}
+			
+		}
+    
+	}
+	
+
+}

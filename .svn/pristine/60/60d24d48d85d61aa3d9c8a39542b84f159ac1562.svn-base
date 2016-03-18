@@ -1,0 +1,63 @@
+package com.adecco.emea.projects;
+
+import junit.framework.TestCase;
+
+public class ServicesJMSTest extends TestCase {
+
+	private String url;
+	private String response;
+	private String queue;
+	private String method;
+
+	public ServicesJMSTest() {
+		super();
+	}
+
+	public ServicesJMSTest(String title, String url, String response,
+			String queue, String method) {
+		super(title);
+		this.url = url;
+		this.response = response;
+		this.queue = queue;
+		this.method=method;
+	}
+
+	public void testJMS() throws Exception {
+		if (url != null) {
+			setName(url);
+			System.out.println("Testing service: "+url);
+			String answer = JMSClient.getClient().sendMessage(queue, url, method);
+			System.out.println("The response was: "+((answer.equals(""))?"Empty":answer));
+			assertTrue(response.equals(answer));
+		}
+
+	}
+	public void test() throws Exception {
+		if (url != null) {
+			setName(url);
+			System.out.println("Testing service: "+url);
+			String answer = JMSClient.getClient().sendMessage(queue, url, method);
+			
+			System.out.println("The response was: "+((answer.equals(""))?"Empty":answer));
+			
+		}
+
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getResponse() {
+		return response;
+	}
+
+	public void setResponse(String response) {
+		this.response = response;
+	}
+
+}

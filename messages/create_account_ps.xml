@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfx2:xmlMsg xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/xmlMsg"
+             xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions"
+             xmlns:ns="http://www.tibco.com/pe/DeployedVarsType"
+             xmlns:ns0="www.tibco.com/plugin/Sleep"
+             xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException"
+             xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema"
+             xmlns:ns3="http://soa.coe.com/CommonTypes/Mediation/Framework"
+             xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jms"
+             xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/MsgHeader"
+             xmlns:ns6="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext"
+             xmlns:pd="http://xmlns.tibco.com/bw/process/2003"
+             xmlns:pfx="http://soa.coe.com/infra/mediation/CommonServices/LogEvent"
+             xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <pfx2:msgHeader>
+      <ns5:eventId>89d4c183131e424291b955263e9b38c5</ns5:eventId>
+      <ns5:timeStamp>2016-03-08T16:45:06.752+01:00</ns5:timeStamp>
+      <ns5:source>CORE_COMMON_1</ns5:source>
+      <ns5:priority>4</ns5:priority>
+      <ns5:exchangeId>1111111</ns5:exchangeId>
+      <ns5:serviceId>60a96ee5bacf4e2196acf4123a489aee</ns5:serviceId>
+      <ns5:exchangeCode>EXCH_SM_MO_CNTMGT</ns5:exchangeCode>
+      <ns5:serviceCode>SM_MO_CNTMGT_v01</ns5:serviceCode>
+      <ns5:isReplay>F</ns5:isReplay>
+      <ns5:transactionId/>
+      <ns5:correlationId/>
+      <ns5:privateCtxt>
+         <ns3:nvpList>
+            <ns3:nvpElement value="CREATEACCOUNT" name="FLOWTYPE"/>
+         </ns3:nvpList>
+      </ns5:privateCtxt>
+      <ns5:batchInfo xsi:nil="true"/>
+      <ns5:extendedCtx/>
+      <ns5:exchangeHistory>
+         <ns6:History xsi:nil="true"/>
+      </ns5:exchangeHistory>
+      <ns5:exchangeVersion xsi:nil="true"/>
+   </pfx2:msgHeader>
+   <pfx2:Body>
+      <ns7:crmCanonical xmlns:ns7="http://www.adecco.com/schemas/CRMCanonical/v1">
+         <ns7:header>
+            <ns7:applicationOrigin>
+               <ns7:application>
+                  <ns7:name>SFDC</ns7:name>
+                  <ns7:country>JP</ns7:country>
+               </ns7:application>
+            </ns7:applicationOrigin>
+            <ns7:operation>create</ns7:operation>
+            <ns7:applicationTarget>
+               <ns7:application>
+                  <ns7:name>PSJ</ns7:name>
+                  <ns7:inputDestination>Q.SM_MO_CNTMGT.INT</ns7:inputDestination>
+                  <ns7:inputDomain>EMEA</ns7:inputDomain>
+               </ns7:application>
+            </ns7:applicationTarget>
+         </ns7:header>
+         <ns7:crmObject>
+            <ns7:GUID>090dc3f3-9560-e10b-d113-9e08a50de2bd</ns7:GUID>
+            <ns7:id>001g000000nKxStAAK</ns7:id>
+            <ns7:entity>
+               <ns7:account>
+                  <ns8:ActivityCode xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:ActivityCodeLabel xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:AppAccount xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">
+                     <ns8:App>SFDC</ns8:App>
+                  </ns8:AppAccount>
+                  <ns8:BillingAddress xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">
+                     <ns9:City xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">tokyo</ns9:City>
+                     <ns9:Country xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">[PSJ]Japan</ns9:Country>
+                     <ns9:CountryCode xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">JP</ns9:CountryCode>
+                     <ns9:PostalCode xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">4535</ns9:PostalCode>
+                     <ns9:Street xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">streetq1</ns9:Street>
+                  </ns8:BillingAddress>
+                  <ns8:CreatedDate xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">2016-03-07T06:08:26Z</ns8:CreatedDate>
+                  <ns8:CreditCheckPerformed xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">false</ns8:CreditCheckPerformed>
+                  <ns8:CurrencyCode xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">JPY</ns8:CurrencyCode>
+                  <ns8:Description xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">test account</ns8:Description>
+                  <ns8:EmpNumber xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">0</ns8:EmpNumber>
+                  <ns8:EmpRange xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">[PSJ]250 to 499 employees</ns8:EmpRange>
+                  <ns8:Fax xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:FirmName xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:HQAddress xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">
+                     <ns9:City xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">tokyo</ns9:City>
+                     <ns9:Country xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">Japan</ns9:Country>
+                     <ns9:CountryCode xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">JP</ns9:CountryCode>
+                     <ns9:PostalCode xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">4535</ns9:PostalCode>
+                     <ns9:State xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">Tôkyô</ns9:State>
+                     <ns9:Street xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">streetq1</ns9:Street>
+                     <ns9:Phone xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">4663636</ns9:Phone>
+                  </ns8:HQAddress>
+                  <ns8:HQFlag xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">true</ns8:HQFlag>
+                  <ns8:Inactive xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">false</ns8:Inactive>
+                  <ns8:KanaName xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:LastModifiedBy xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">
+                     <ns9:Email xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">jerome.derock@adecco-groupe.fr</ns9:Email>
+                     <ns9:Id xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">005b0000000gWEyAAM</ns9:Id>
+                     <ns9:UserName xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">esb@adecco.com.everest.csat</ns9:UserName>
+                  </ns8:LastModifiedBy>
+                  <ns8:LastModifiedDate xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">2016-03-08T08:16:06Z</ns8:LastModifiedDate>
+                  <ns8:LastViewedDate xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">2016-03-08T08:16:06Z</ns8:LastViewedDate>
+                  <ns8:MarketSegment xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">[PSJ]L: Real estate activities</ns8:MarketSegment>
+                  <ns8:Name xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">CSAT-Manual Site HQ</ns8:Name>
+                  <ns8:NationalIdentifier xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">d7bdf0f8</ns8:NationalIdentifier>
+                  <ns8:ParentAccount xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">
+                     <ns9:FunctionalTagCommercialContractCreated xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">false</ns9:FunctionalTagCommercialContractCreated>
+                     <ns9:FunctionalTagCreditCheckPerformed xmlns:ns9="http://www.adecco.com/schemas/CRMCanonical/v1/CommonTypes">false</ns9:FunctionalTagCreditCheckPerformed>
+                  </ns8:ParentAccount>
+                  <ns8:PaymentTerms xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:Phone xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">4663636</ns8:Phone>
+                  <ns8:Public xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">Private</ns8:Public>
+                  <ns8:RecType xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">Site</ns8:RecType>
+                  <ns8:Scope xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:ShortName xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:Segmentation xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">MEDIUM</ns8:Segmentation>
+                  <ns8:Status xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account">[PSJ]Prospect</ns8:Status>
+                  <ns8:VATNumber xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+                  <ns8:Website xmlns:ns8="http://www.adecco.com/schemas/CRMCanonical/v1/Account"/>
+               </ns7:account>
+            </ns7:entity>
+            <ns7:metaList>
+               <ns7:meta>
+                  <ns7:name>SALESFORCE_ID</ns7:name>
+                  <ns7:value>001g000000nKxStAAK</ns7:value>
+               </ns7:meta>
+            </ns7:metaList>
+         </ns7:crmObject>
+      </ns7:crmCanonical>
+   </pfx2:Body>
+</pfx2:xmlMsg>

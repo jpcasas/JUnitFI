@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: juanpablo.casas
+Build-Jdk: 1.7.0_15
+Main-Class: com.adecco.emea.projects.TestSSL
+Created-By: Maven Integration for Eclipse
+

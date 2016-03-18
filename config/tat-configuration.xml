@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+   <emsStringConnection>tcp://ntintfr06517.emea.adeccotest.net:7264,tcp://ntintfr06518.emea.adeccotest.net:7264</emsStringConnection>
+   <emsUserName>admin</emsUserName>
+   <emsPassword>ZFQJ5RHjzQ</emsPassword>
+   
+   
+   <httpServices>
+      <checkCode>true</checkCode>
+      <codeAssert>200</codeAssert>
+      <checkResponse>false</checkResponse>
+      <httpMethod>GET</httpMethod>
+      <requestMessage>empty.xml</requestMessage>
+      <responseMessage>empty.xml</responseMessage>
+      <serviceName>PUTCOMMERCIALCONTRACT</serviceName>
+      <type>REST</type>
+      <url>https://uat-services-esb.emea.adecco.net:9181/MO/CNTMGT/PUTCOMMERCIALCONTRACT/v01</url>
+      <messagesPath>./messages</messagesPath>
+   </httpServices>
+   
+   <queueServices>
+      <serviceName>Create Account in PS</serviceName>
+      <checkResponse>false</checkResponse>
+      <checkString>true</checkString>
+      <stringToFind>SUCCESS</stringToFind>
+      <queueToSend>Q.CIO_MO_CNTMGT_PSJ.INT</queueToSend>
+      <requestMessage>create_account_ps.xml</requestMessage>
+      <responseMessage>create_account_ps.response.xml</responseMessage>
+      <responseQueue>Q.UNITTEST</responseQueue> 
+      <messagesPath>messages</messagesPath>
+      <writeResponse>false</writeResponse>
+   </queueServices>
+</configuration>

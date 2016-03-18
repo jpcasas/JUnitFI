@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="1" time="27.004" errors="0" skipped="0" tests="14" name="com.adecco.emea.projects.TestServices">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\tibco_dev2\tibco\tibcojre\1.7.0\bin"/>
+    <property name="java.vm.version" value="23.7-b01"/>
+    <property name="user.country.format" value="FR"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Workspace\ESB_SANITY_CHECK"/>
+    <property name="java.runtime.version" value="1.7.0_15-b03"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\JUANPA~1.CAS\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3104433789047732038.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\tibco_dev2\tibco\tibcojre\1.7.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/tibco_dev2/tibco/tibcojre/1.7.0/bin/server;C:/tibco_dev2/tibco/tibcojre/1.7.0/bin;C:/tibco_dev2/tibco/tibcojre/1.7.0/lib/amd64;C:\tibco_dev2\tibco\tibcojre\1.7.0\bin;C:\tibco_dev2;C:\tibco_dev2\tibco\tibrv\8.4\bin;C:\tibco_dev2\tibco\tra\5.8\bin;C:\tibco_dev2\maven\bin;C:\tibco_dev2\svn\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\lotus\notes;C:\tibco_dev2\gradle-2.4\bin;C:\Program Files\TortoiseSVN\bin;C:\tibco_dev2\tibco\tibcojre\1.7.0\bin;C:\tibco_dev2\svn\bin;C:\tibco_dev2\maven\bin;C:\cygwin64\bin;C:\Juan\apache-ant-1.9.6\bin;C:\Juan\gradle-2.8\bin;C:\juan\Git\cmd;C:\juan\Git\mingw64\bin;C:\juan\Git\usr\bin;C:\Program Files\nodejs\;C:\Juan\groovy-2.4.5\bin;C:\Program Files (x86)\Nmap;C:\Users\juanpablo.casas\AppData\Roaming\npm;C:\tibco_dev2\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\juanpablo.casas"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="juanpablo.casas"/>
+    <property name="java.class.path" value="C:\tibco_dev2\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\tibco_dev2\tibco\tibcojre\1.7.0"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Puat -B -s C:\tibco_dev2\maven\conf\settings.xml test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="user.language.format" value="fr"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_15"/>
+    <property name="java.ext.dirs" value="C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\resources.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\rt.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\sunrsasign.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\jsse.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\jce.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\charsets.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\lib\jfr.jar;C:\tibco_dev2\tibco\tibcojre\1.7.0\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\tibco_dev2\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="maven.bootclasspath" value="C:\tibco_dev2\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="4.456" classname="com.adecco.emea.projects.ServicesJMSTest" name="Addresses.V2"/>
+  <testcase time="2.583" classname="com.adecco.emea.projects.ServicesJMSTest" name="Customers.V2"/>
+  <testcase time="7.351" classname="com.adecco.emea.projects.ServicesJMSTest" name="Contract.V2">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at com.adecco.emea.projects.ServicesJMSTest.testJMS(ServicesJMSTest.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+	at junit.framework.TestSuite.run(TestSuite.java:203)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:96)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:117)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>Testing service: Contract.V2
+253b8030-c461-45d9-993d-ae5585a063ca
+The response was: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ns0:xmlMsg xmlns:ns0=&quot;http://soa.coe.com/CommonTypes/Mediation/xmlMsg&quot;&gt;&lt;ns0:msgHeader&gt;&lt;ns1:eventId xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;343ce58f67334304a65e9e520582d39e&lt;/ns1:eventId&gt;&lt;ns1:timeStamp xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;2016-01-21T14:31:08.969+01:00&lt;/ns1:timeStamp&gt;&lt;ns1:source xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;INTERNAL_Sync&lt;/ns1:source&gt;&lt;ns1:priority xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;4&lt;/ns1:priority&gt;&lt;ns1:exchangeId xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;57b63c2658664462b03888913ba98f30&lt;/ns1:exchangeId&gt;&lt;ns1:serviceId xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;33399d0e4ba844689a47b1a6141c18e8&lt;/ns1:serviceId&gt;&lt;ns1:exchangeCode xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;EXCH_CIO_MO_CNTMGT&lt;/ns1:exchangeCode&gt;&lt;ns1:serviceCode xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;CIO_MO_CNTMGT_v01&lt;/ns1:serviceCode&gt;&lt;ns1:isReplay xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot;&gt;F&lt;/ns1:isReplay&gt;&lt;ns1:privateCtxt xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:nil=&quot;true&quot;/&gt;&lt;ns1:batchInfo xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:nil=&quot;true&quot;/&gt;&lt;ns1:extendedCtx xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:nil=&quot;true&quot;/&gt;&lt;ns1:exchangeHistory xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:nil=&quot;true&quot;/&gt;&lt;ns1:exchangeVersion xmlns:ns1=&quot;http://soa.coe.com/CommonTypes/Mediation/MsgHeader&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:nil=&quot;true&quot;/&gt;&lt;/ns0:msgHeader&gt;&lt;ns0:Body&gt;&lt;ns1:crmCanonical xmlns:ns1=&quot;http://www.adecco.com/schemas/CRMCanonical/v1&quot;&gt;&lt;ns1:header&gt;&lt;ns1:applicationOrigin&gt;&lt;ns1:application&gt;&lt;ns1:name&gt;CMTP&lt;/ns1:name&gt;&lt;/ns1:application&gt;&lt;/ns1:applicationOrigin&gt;&lt;ns1:operation&gt;create&lt;/ns1:operation&gt;&lt;/ns1:header&gt;&lt;ns1:crmObject&gt;&lt;ns1:id&gt;NO_IDENTIFIED&lt;/ns1:id&gt;&lt;ns1:entity&gt;&lt;ns1:account/&gt;&lt;/ns1:entity&gt;&lt;ns1:metaList&gt;&lt;ns1:meta&gt;&lt;ns1:name&gt;SUCCESS&lt;/ns1:name&gt;&lt;ns1:value&gt;false&lt;/ns1:value&gt;&lt;/ns1:meta&gt;&lt;ns1:meta&gt;&lt;ns1:name&gt;ERRDESC&lt;/ns1:name&gt;&lt;ns1:value&gt;Error parsing crmCanonical object: Job-8 Error in [CIO_MO_CNTMGT/v01/Testers/SanityPS.process/Confirm-OK]
+There was an error when attempting to confirm a message.&amp;#xD;
+	at com.tibco.plugin.share.jms.impl.JMSEventContext.confirm(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.ConfirmActivity.eval(Unknown Source)&amp;#xD;
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.Job.a(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.Job.k(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)&amp;#xD;
+caused by: com.tibco.plugin.share.jms.impl.JMSExceptionWrapper: javax.jms.IllegalStateException: Attempt to acknowledge message(s) not valid for this consumer&amp;#xD;
+	at com.tibco.plugin.share.jms.impl.JMSPluginException.&amp;lt;init&amp;gt;(Unknown Source)&amp;#xD;
+	at com.tibco.plugin.share.jms.impl.JMSEventContext.confirm(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.ConfirmActivity.eval(Unknown Source)&amp;#xD;
+	at com.tibco.pe.plugin.Activity.eval(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.Job.a(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.Job.k(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)&amp;#xD;
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)&amp;#xD;
+Caused by: javax.jms.IllegalStateException: Attempt to acknowledge message(s) not valid for this consumer&amp;#xD;
+	at com.tibco.tibjms.Tibjmsx.buildException(Tibjmsx.java:581)&amp;#xD;
+	at com.tibco.tibjms.TibjmsxSessionImp._confirmNonTransacted(TibjmsxSessionImp.java:3544)&amp;#xD;
+	at com.tibco.tibjms.TibjmsxSessionImp._confirm(TibjmsxSessionImp.java:3645)&amp;#xD;
+	at com.tibco.tibjms.TibjmsxSessionImp._confirmNonAuto(TibjmsxSessionImp.java:4980)&amp;#xD;
+	at com.tibco.tibjms.TibjmsMessage.acknowledge(TibjmsMessage.java:608)&amp;#xD;
+	... 8 more&amp;#xD;
+There was an error when attempting to confirm a message.com.tibco.plugin.share.jms.impl.JMSPluginExceptionJMSPluginExceptionCIO_MO_CNTMGT/v01/Testers/SanityPS.process/Confirm-OKBW-JMS-100024&lt;/ns1:value&gt;&lt;/ns1:meta&gt;&lt;/ns1:metaList&gt;&lt;/ns1:crmObject&gt;&lt;ns1:metaList&gt;&lt;ns1:meta&gt;&lt;ns1:name&gt;SUCCESS&lt;/ns1:name&gt;&lt;ns1:value&gt;false&lt;/ns1:value&gt;&lt;/ns1:meta&gt;&lt;/ns1:metaList&gt;&lt;/ns1:crmCanonical&gt;&lt;/ns0:Body&gt;&lt;/ns0:xmlMsg&gt;
+</system-out>
+  </testcase>
+  <testcase time="1.42" classname="com.adecco.emea.projects.ServicesJMSTest" name="Contacts.V2"/>
+  <testcase time="1.118" classname="com.adecco.emea.projects.ServicesJMSTest" name="CreditCheckRequests.V2"/>
+  <testcase time="3.188" classname="com.adecco.emea.projects.ServicesJMSTest" name="Customers.V1"/>
+  <testcase time="0.631" classname="com.adecco.emea.projects.ServicesJMSTest" name="Addresses.V1"/>
+  <testcase time="0.578" classname="com.adecco.emea.projects.ServicesJMSTest" name="Contacts.V1"/>
+  <testcase time="0.61" classname="com.adecco.emea.projects.ServicesJMSTest" name="CreditCheckRequests.V1"/>
+  <testcase time="0.596" classname="com.adecco.emea.projects.ServicesJMSTest" name="Contract.v1"/>
+  <testcase time="1.101" classname="com.adecco.emea.projects.ServicesHTTPTest" name="PUTCOMMERCIALCONTRACT MO"/>
+  <testcase time="0.884" classname="com.adecco.emea.projects.ServicesHTTPTest" name="PUTCREDITCHECK MO"/>
+  <testcase time="1.234" classname="com.adecco.emea.projects.ServicesHTTPTest" name="PUTCOMMERCIALCONTRACT PSJ"/>
+  <testcase time="1.233" classname="com.adecco.emea.projects.ServicesHTTPTest" name="PUTCREDITCHECK PSJ"/>
+</testsuite>

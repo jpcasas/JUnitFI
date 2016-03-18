@@ -1,0 +1,31 @@
+package com.adecco.emea.projects;
+
+public class GenericHTTPService {
+	
+	private String urlToTest;
+	private String correctAnswer;
+	
+	public String getServiceResponse() throws Exception{
+		return HTTPClient.getReponse(urlToTest);
+	}
+
+	public String getUrlToTest() {
+		return urlToTest;
+	}
+
+	public void setUrlToTest(String urlToTest) {
+		this.urlToTest = urlToTest;
+	}
+
+	public String getCorrectAnswer() {
+		return correctAnswer;
+	}
+
+	public void setCorrectAnswer(String correctAnswer) {
+		this.correctAnswer = correctAnswer;
+	}
+	
+	
+	
+
+}

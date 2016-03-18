@@ -1,0 +1,59 @@
+package com.adecco.emea.projects;
+
+import junit.framework.TestCase;
+
+public class ServicesHTTPTest extends TestCase{
+
+	private String url;
+	private String response;
+	private String showtitle;
+	
+	public ServicesHTTPTest(){
+		super();
+	}
+	
+	
+	public ServicesHTTPTest(String title,String url, String response, String showtitle) {
+		super(title);
+		this.url=url;
+		this.response=response;
+		this.showtitle=showtitle;
+	}
+	
+	public void testURL() throws Exception{
+		if(url!=null){
+			setName(showtitle);
+			System.out.println("Testing service: "+url);
+			String answer=HTTPClient.getReponse(url);
+			System.out.println("The response was: "+((answer.equals(""))?"Empty":answer));
+			assertTrue(response.equals(answer));
+		}
+		
+		
+		
+	}
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getResponse() {
+		return response;
+	}
+
+	public void setResponse(String response) {
+		this.response = response;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}
